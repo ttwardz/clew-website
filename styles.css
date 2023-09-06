@@ -8,6 +8,11 @@ body {
     font-family: Palatino, Baskerville, serif;
 }
 
+h2 {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+
 p {
     line-height: 1.25rem;
 }
