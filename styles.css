@@ -11,6 +11,7 @@ body {
 img {
     width: 90%;
     height: auto;
+    aspect-ratio: initial;
 }
 .dark-mode-image {
         display: none;
