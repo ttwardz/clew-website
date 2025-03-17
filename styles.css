@@ -1,8 +1,5 @@
-* {
-    margin: 0.5rem;
-}
-
 body {
+    margin: 1.5rem;
     background: var(--bg);
     color: var(--text);
     font-family: Palatino, Baskerville, serif;
