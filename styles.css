@@ -1,39 +1,139 @@
 body {
-    margin: 1.5rem;
+    margin: 0;
+    padding: 0;
     background: var(--bg);
     color: var(--text);
     font-family: Palatino, Baskerville, serif;
+    line-height: 1.6;
 }
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* iOS-inspired card design */
+.ios-card {
+    background: var(--card-bg);
+    border-radius: 14px;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ios-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* Header styling */
+header {
+    background: var(--header-bg);
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+/* iOS-inspired navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--nav-border);
+}
+
+nav a:hover, nav a:focus {
+    background: var(--nav-hover-bg);
+    color: var(--nav-hover-text);
+}
+
+/* Typography */
 h2 {
-    padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 60%;
+    background: var(--accent-1);
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
 }
 
 p {
-    line-height: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
 }
 
-footer {
+/* iOS-style call to action */
+.cta-button {
+    display: inline-block;
+    background: var(--accent-1);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    margin: 1rem 0;
     text-align: center;
-    color: var(--secondary-text);
-    padding: 2rem;
 }
 
-img {
-    max-width: 90%;
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* App Screenshot */
+.app-screenshot {
+    position: relative;
+    width: 240px; /* Smaller width */
+    margin: 1.5rem auto; /* Centered with vertical margin */
+    border-radius: 40px;
+    padding: 12px;
+    background: var(--phone-frame);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.app-screenshot img {
+    border-radius: 30px;
+    width: 100%;
     height: auto;
-    max-height: 50rem;
-    aspect-ratio: initial;
+    display: block;
 }
-.dark-mode-image {
-        display: none;
-    }
-.light-mode-image {
-        display: block;
-    }
 
-/* Blog styles for "Updates" page */
+/* Blog post styling */
 .blog-container {
     max-width: 800px;
     margin: 0 auto;
@@ -42,7 +142,7 @@ img {
 .blog-post {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid var(--secondary-text);
+    border-bottom: 1px solid var(--divider);
 }
 
 .blog-post:last-child {
@@ -57,23 +157,166 @@ img {
     color: var(--secondary-text);
     font-style: italic;
     margin-bottom: 1.5rem;
+    font-size: 0.9rem;
 }
 
-/* Navigation styles */
-nav {
-    margin-top: 1rem;
+/* Feature list */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: rem 0;
+}
+
+.feature-list li {
+    padding: 0.8rem 0;
+    /* margin-bottom: 0.8rem; */
+    position: relative;
+    padding-left: 2rem;
+}
+
+.feature-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: 10px;
+    height: 10px;
+    background: var(--accent-1);
+    border-radius: 50%;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    color: var(--secondary-text);
+    padding: 2rem;
+    margin-top: 3rem;
+    background: var(--footer-bg);
+    border-top: 1px solid var(--divider);
+    font-size: 0.9rem;
+}
+
+/* Dark mode highlighting for code and quotes */
+blockquote {
+    border-left: 4px solid var(--accent-1);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--secondary-text);
+    font-style: italic;
+}
+
+code {
+    background: var(--code-bg);
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-family: "SF Mono", "Menlo", monospace;
+    font-size: 0.9em;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.app-screenshot .dark-mode-image {
+    display: none;
+}
+
+.app-screenshot .light-mode-image {
+    display: block;
+}
+
+/* Beta instructions */
+ol {
+    counter-reset: item;
+    padding-left: 1rem;
+}
+
+ol li {
+    display: block;
     margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2.5rem;
 }
 
-nav a {
-    margin-right: 1rem;
+ol li:before {
+    content: counter(item) ".";
+    counter-increment: item;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--accent-2);
+    color: white;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-/*THEMES*/
+/* Download button in navigation */
+.download-button {
+    background: var(--accent-orange) !important;
+    color: white !important;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.download-button:hover, .download-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: var(--accent-orange-hover) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        flex: 1 0 auto;
+        text-align: center;
+    }
+
+    .app-screenshot {
+        width: 200px; /* Even smaller on mobile */
+    }
+}
+
+/* Theme colors */
 :root {
-    --bg: #fff;
+    --bg: #f9f9f9;
     --text: #272343;
     --secondary-text: #555;
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --card-bg: white;
+    --card-border: rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.7);
+    --nav-text: #272343;
+    --nav-border: rgba(0, 0, 0, 0.1);
+    --nav-hover-bg: #007AFF;
+    --nav-hover-text: white;
+    --accent-1: #007AFF; /* iOS blue */
+    --accent-2: #5AC8FA; /* iOS light blue */
+    --accent-orange: #FF9500; /* iOS orange */
+    --accent-orange-hover: #FF7B00; /* Darker iOS orange for hover */
+    --divider: rgba(0, 0, 0, 0.1);
+    --footer-bg: rgba(255, 255, 255, 0.7);
+    --code-bg: rgba(0, 0, 0, 0.05);
+    --phone-frame: #111;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,15 +324,35 @@ nav a {
         --bg: #111;
         --text: #eee;
         --secondary-text: #aaa;
+        --header-bg: rgba(30, 30, 30, 0.8);
+        --card-bg: #1c1c1e;
+        --card-border: rgba(255, 255, 255, 0.1);
+        --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
+        --nav-bg: rgba(30, 30, 30, 0.7);
+        --nav-text: #eee;
+        --nav-border: rgba(255, 255, 255, 0.1);
+        --nav-hover-bg: #0A84FF; /* Darker iOS blue for dark mode */
+        --nav-hover-text: white;
+        --accent-1: #0A84FF; /* Darker iOS blue */
+        --accent-2: #64D2FF; /* Darker iOS light blue */
+        --accent-orange: #FF9F0A; /* Darker iOS orange for dark mode */
+        --accent-orange-hover: #FFA825; /* Brighter iOS orange for dark mode hover */
+        --divider: rgba(255, 255, 255, 0.1);
+        --footer-bg: rgba(30, 30, 30, 0.5);
+        --code-bg: rgba(255, 255, 255, 0.1);
+        --phone-frame: #000;
     }
     
-    .dark-mode-image {
+    .app-screenshot .dark-mode-image {
         display: block;
     }
-    .light-mode-image {
+    
+    .app-screenshot .light-mode-image {
         display: none;
     }
+    
     a {
-        color: #00cee3;
+        color: #0A84FF;
     }
 }
