@@ -33,6 +33,41 @@ img {
         display: block;
     }
 
+/* Blog styles for "Updates" page */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--secondary-text);
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post h2 {
+    margin-bottom: 0.5rem;
+}
+
+.post-date {
+    color: var(--secondary-text);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* Navigation styles */
+nav {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    margin-right: 1rem;
+}
 
 /*THEMES*/
 :root {
