@@ -68,6 +68,20 @@ nav a:hover, nav a:focus {
     color: var(--nav-hover-text);
 }
 
+/* Active tab styling */
+nav a.active {
+    background: var(--nav-active-bg);
+    color: var(--nav-active-text);
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+}
+
+nav a.active:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
 /* Typography */
 h2 {
     font-size: 1.8rem;
@@ -114,16 +128,79 @@ p {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Secondary button style */
+.secondary-button {
+    display: inline-block;
+    background: transparent;
+    color: var(--accent-1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1.5px solid var(--accent-1);
+    transition: all 0.2s ease;
+    margin: 1rem 0 1rem 1rem;
+    text-align: center;
+    width: auto; /* Ensure button is only as wide as its content */
+}
+
+.secondary-button:hover {
+    transform: translateY(-2px);
+    background-color: rgba(0, 122, 255, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Screenshot Grid */
+.screenshot-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Reduced horizontal gap from 2rem to 1rem */
+    margin: 2.5rem 0;
+}
+
+/* Visibility controls for different screen sizes */
+.app-screenshot {
+    display: none; /* Hide by default */
+    text-decoration: none; /* Remove underline from links */
+    cursor: pointer;
+}
+
+/* Only show the first screenshot on mobile */
+.visible-mobile {
+    display: block;
+}
+
+/* Medium screens show two screenshots */
+@media (min-width: 700px) { /* Reduced from 768px to 700px */
+    .visible-tablet {
+        display: block;
+    }
+}
+
+/* Large screens show all three screenshots */
+@media (min-width: 950px) { /* Reduced from 1024px to 950px */
+    .visible-desktop {
+        display: block;
+    }
+}
+
 /* App Screenshot */
 .app-screenshot {
     position: relative;
-    width: 240px; /* Smaller width */
-    margin: 1.5rem auto; /* Centered with vertical margin */
+    width: 200px; /* Reduced from 220px to 200px */
     border-radius: 40px;
-    padding: 12px;
+    padding: 10px; /* Reduced from 12px to 10px */
     background: var(--phone-frame);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-screenshot:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 
 .app-screenshot img {
@@ -290,7 +367,13 @@ ol li:before {
     }
 
     .app-screenshot {
-        width: 200px; /* Even smaller on mobile */
+        width: 200px;
+    }
+
+    .secondary-button {
+        margin: 0.5rem 0 1rem 0;
+        display: inline-block; /* Changed from block to inline-block */
+        width: auto; /* Ensure button is only as wide as its content */
     }
 }
 
@@ -309,6 +392,8 @@ ol li:before {
     --nav-border: rgba(0, 0, 0, 0.1);
     --nav-hover-bg: #007AFF;
     --nav-hover-text: white;
+    --nav-active-bg: #007AFF; /* Active tab background */
+    --nav-active-text: white; /* Active tab text color */
     --accent-1: #007AFF; /* iOS blue */
     --accent-2: #5AC8FA; /* iOS light blue */
     --accent-orange: #FF9500; /* iOS orange */
@@ -334,6 +419,8 @@ ol li:before {
         --nav-border: rgba(255, 255, 255, 0.1);
         --nav-hover-bg: #0A84FF; /* Darker iOS blue for dark mode */
         --nav-hover-text: white;
+        --nav-active-bg: #0A84FF; /* Active tab background for dark mode */
+        --nav-active-text: white; /* Active tab text color for dark mode */
         --accent-1: #0A84FF; /* Darker iOS blue */
         --accent-2: #64D2FF; /* Darker iOS light blue */
         --accent-orange: #FF9F0A; /* Darker iOS orange for dark mode */
@@ -354,5 +441,14 @@ ol li:before {
     
     a {
         color: #0A84FF;
+    }
+
+    .secondary-button {
+        color: var(--accent-1);
+        border-color: var(--accent-1);
+    }
+
+    .secondary-button:hover {
+        background-color: rgba(10, 132, 255, 0.1);
     }
 }
