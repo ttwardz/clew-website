@@ -151,6 +151,97 @@ p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Button group */
+.button-group {
+    /* display: flex; */
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.button-group .secondary-button {
+    margin: 0;
+    padding: 0.8rem 1.5rem 0.6rem 1.5rem; /* Reduced bottom padding */
+}
+
+/* Intro card with layout */
+.intro-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.intro-content {
+    flex: 1;
+}
+
+/* Title section with clipped-on screenshot */
+.intro-title-section {
+    display: flex;
+    justify-content: space-between; /* This keeps heading left-aligned */
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Mobile screenshot (small and next to title) */
+.intro-screenshot-mobile {
+    margin-left: 1rem;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+    transform: rotate(5deg);
+}
+
+.intro-screenshot-mobile .app-screenshot {
+    width: 80px; /* Very small thumbnail */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
+    border-radius: 20px;
+    padding: 6px;
+}
+
+.intro-screenshot-mobile .app-screenshot img {
+    border-radius: 15px;
+}
+
+/* Desktop screenshot (side positioning) */
+.intro-screenshot-desktop {
+    display: none; /* Hidden on mobile */
+}
+
+/* Medium screens and larger: side-by-side layout */
+@media (min-width: 850px) {
+    .intro-card {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .intro-content {
+        flex: 3;
+    }
+    
+    .intro-screenshot-mobile {
+        display: none; /* Hide on desktop */
+    }
+    
+    .intro-screenshot-desktop {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 4rem; /* Position roughly aligned with title */
+    }
+    
+    .intro-screenshot-desktop .app-screenshot {
+        width: 220px; /* Larger size for desktop */
+    }
+}
+
+/* Make intro screenshot always visible */
+.always-visible {
+    display: block !important;
+}
+
 /* Screenshot Grid */
 .screenshot-grid {
     display: flex;
@@ -372,8 +463,8 @@ ol li:before {
 
     .secondary-button {
         margin: 0.5rem 0 1rem 0;
-        display: inline-block; /* Changed from block to inline-block */
-        width: auto; /* Ensure button is only as wide as its content */
+        display: inline-block; 
+        width: auto; 
     }
 }
 
