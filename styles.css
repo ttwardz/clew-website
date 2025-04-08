@@ -442,6 +442,32 @@ ol li:before {
     background: var(--accent-orange-hover) !important;
 }
 
+/* Instagram button */
+.instagram-button {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-size: 1em;
+      line-height: 1;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background-color: white;
+      border: 1px solid #e1e1e1;
+      color: #333;
+      transition: all 0.2s ease;
+    }
+    
+    .instagram-button:hover {
+      background-color: #f8f8f8;
+      border-color: #d0d0d0;
+    }
+    
+    .instagram-button img {
+      width: 16px;
+      height: 16px;
+      margin-right: 4px;
+    }
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     header h1 {
