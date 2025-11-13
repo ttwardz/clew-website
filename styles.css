@@ -115,18 +115,21 @@ nav a.active:hover {
 }
 
 /* Download button in navigation */
-.download-button {
-    background: var(--accent-orange) !important;
-    color: white !important;
+nav a.download-button {
+    background: var(--accent-orange);
+    color: white;
     font-weight: bold;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
+    border-color: transparent;
 }
 
-.download-button:hover, .download-button:focus {
+nav a.download-button:hover,
+nav a.download-button:focus {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    background: var(--accent-orange-hover) !important;
+    background: var(--accent-orange-hover);
+    color: white;
 }
 
 /* Buttons */
@@ -161,9 +164,7 @@ nav a.active:hover {
     letter-spacing: 0.5px;
     border: 1.5px solid var(--accent-1);
     transition: all 0.2s ease;
-    margin: 1rem 0 1rem 1rem;
     text-align: center;
-    width: auto;
 }
 
 .secondary-button:hover {
@@ -175,75 +176,61 @@ nav a.active:hover {
 .button-group {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0.5rem;
-    margin: 1.5rem 0;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
 }
 
-.button-group .secondary-button {
+.button-group > * {
     margin: 0;
-    padding: 0.8rem 1.5rem 0.6rem 1.5rem;
-}
-
-.button-group .cta-button {
-    margin: 0;
+    white-space: nowrap;
 }
 
 /* Intro section layout */
-.intro-card {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.intro-card h2 {
+    margin-top: 0;
 }
 
-.intro-columns {
-    display: flex;
-    flex-direction: column;
+.intro-card__body {
+    line-height: 1.6;
 }
 
-.intro-content {
-    flex: 1;
-}
-
-/* Title section with clipped-on screenshot */
-.intro-title-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 1.5rem;
-    position: relative;
-}
-
-/* Mobile screenshot */
-.intro-screenshot-mobile {
-    margin-left: 1rem;
-    align-self: flex-end;
-    margin-bottom: 1rem;
-    transform: rotate(5deg);
-}
-
-.intro-screenshot-mobile .app-screenshot {
+.intro-card__screenshot {
+    float: right;
     width: 80px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: -0.5rem;
+    text-decoration: none;
+    cursor: pointer;
+    transform: rotate(5deg);
     border-radius: 20px;
     padding: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.intro-screenshot-mobile .app-screenshot img {
+.intro-card__screenshot:hover {
+    transform: rotate(5deg) translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.intro-card__screenshot img {
     border-radius: 15px;
-}
-
-/* Desktop screenshot */
-.intro-screenshot-desktop {
-    display: none;
+    width: 100%;
+    height: auto;
 }
 
 /* Screenshot Grid */
 .screenshot-grid {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    margin: 2rem -0.5rem;
+    gap: 0.75rem;
+    margin: 2rem 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Horizontal screenshot grid */
@@ -277,9 +264,7 @@ nav a.active:hover {
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    flex: 1 1 auto;
-    max-width: 220px;
-    min-width: 160px;
+    width: 100%;
     border-radius: 40px;
     padding: 8px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -296,23 +281,15 @@ nav a.active:hover {
     border-radius: 30px;
     width: 100%;
     height: auto;
-    display: block;
-}
-
-/* Always visible override */
-.always-visible {
-    display: block !important;
 }
 
 /* Light/dark mode image handling */
-.app-screenshot .dark-mode-image,
-.screenshot-grid-horizontal .dark-mode-image {
-    display: none;
+.light-mode-image {
+    display: block;
 }
 
-.app-screenshot .light-mode-image,
-.screenshot-grid-horizontal .light-mode-image {
-    display: block;
+.dark-mode-image {
+    display: none;
 }
 
 /* Feature list */
@@ -364,19 +341,6 @@ nav a.active:hover {
 
 .instagram-ios-button svg {
     flex-shrink: 0;
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    .instagram-ios-button {
-        background: var(--accent-1);
-        box-shadow: 0 2px 6px rgba(10, 132, 255, 0.3);
-    }
-
-    .instagram-ios-button:hover {
-        box-shadow: 0 4px 10px rgba(10, 132, 255, 0.4);
-        background: var(--nav-hover-bg);
-    }
 }
 
 /* Footer styling */
@@ -468,52 +432,71 @@ ol li:before {
 
 /* Media queries for responsive design */
 @media (min-width: 600px) {
-    .intro-columns {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 2rem;
+    .intro-card {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+            "title screenshot"
+            "body screenshot"
+            "buttons buttons";
+        gap: 0 2rem;
     }
 
-    .intro-content {
-        flex: 3;
+    .intro-card h2 {
+        grid-area: title;
     }
 
-    .intro-screenshot-mobile {
-        display: none;
+    .intro-card__body {
+        grid-area: body;
     }
 
-    .intro-screenshot-desktop {
-        display: flex;
-        flex: 1;
-        justify-content: center;
-        align-items: flex-start;
-        margin-top: 4rem;
-    }
-
-    .intro-screenshot-desktop .app-screenshot {
+    .intro-card__screenshot {
+        grid-area: screenshot;
+        float: none;
         width: 220px;
+        margin-left: 0;
+        margin-top: 4rem;
+        margin-bottom: 0;
+        transform: none;
+        border-radius: 40px;
+        padding: 8px;
+        align-self: start;
+        justify-self: center;
+    }
+
+    .intro-card__screenshot:hover {
+        transform: translateY(-5px);
+    }
+
+    .intro-card__screenshot img {
+        border-radius: 30px;
+    }
+
+    .button-group {
+        grid-area: buttons;
     }
 }
 
-/* Responsive visibility classes */
-.visible-mobile {
+/* Responsive visibility classes for app screenshots */
+.app-screenshot.visible-mobile {
     display: block;
 }
 
 @media (min-width: 500px) {
-    .visible-tablet {
+    .app-screenshot.visible-tablet {
         display: block;
     }
 }
 
 @media (min-width: 750px) {
-    .visible-desktop {
+    .app-screenshot.visible-desktop,
+    .screenshot-grid-horizontal.visible-desktop {
         display: block;
     }
 }
 
 @media (min-width: 1000px) {
-    .visible-wide {
+    .app-screenshot.visible-wide {
         display: block;
     }
 }
@@ -532,14 +515,9 @@ ol li:before {
         text-align: center;
     }
 
-    .app-screenshot {
-        max-width: 200px;
-        min-width: 150px;
-    }
-
     .screenshot-grid {
-        gap: 0.35rem;
-        margin: 2rem -0.35rem;
+        gap: 0.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     .secondary-button {
@@ -555,32 +533,6 @@ ol li:before {
     .button-group {
         flex-wrap: wrap;
         justify-content: center;
-    }
-}
-
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    .app-screenshot .dark-mode-image,
-    .screenshot-grid-horizontal .dark-mode-image {
-        display: block;
-    }
-    
-    .app-screenshot .light-mode-image,
-    .screenshot-grid-horizontal .light-mode-image {
-        display: none;
-    }
-    
-    a {
-        color: #0A84FF;
-    }
-
-    .secondary-button {
-        color: var(--accent-1);
-        border-color: var(--accent-1);
-    }
-
-    .secondary-button:hover {
-        background-color: rgba(10, 132, 255, 0.1);
     }
 }
 
@@ -610,6 +562,7 @@ ol li:before {
     --code-bg: rgba(0, 0, 0, 0.05);
 }
 
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #111;
@@ -623,16 +576,51 @@ ol li:before {
         --nav-bg: rgba(30, 30, 30, 0.7);
         --nav-text: #eee;
         --nav-border: rgba(255, 255, 255, 0.1);
-        --nav-hover-bg: #0A84FF; /* Darker iOS blue for dark mode */
+        --nav-hover-bg: #0A84FF;
         --nav-hover-text: white;
         --nav-active-bg: #0A84FF;
         --nav-active-text: white;
-        --accent-1: #0A84FF; /* Darker iOS blue */
-        --accent-2: #64D2FF; /* Darker iOS light blue */
-        --accent-orange: #FF9F0A; /* Darker iOS orange for dark mode */
-        --accent-orange-hover: #FFA825; /* Brighter iOS orange for dark mode hover */
+        --accent-1: #0A84FF;
+        --accent-2: #64D2FF;
+        --accent-orange: #FF9F0A;
+        --accent-orange-hover: #FFA825;
         --divider: rgba(255, 255, 255, 0.1);
         --footer-bg: rgba(30, 30, 30, 0.5);
         --code-bg: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Image mode switching */
+    .dark-mode-image {
+        display: block;
+    }
+
+    .light-mode-image {
+        display: none;
+    }
+
+    /* Link colors */
+    a {
+        color: #0A84FF;
+    }
+
+    /* Button adjustments */
+    .secondary-button {
+        color: var(--accent-1);
+        border-color: var(--accent-1);
+    }
+
+    .secondary-button:hover {
+        background-color: rgba(10, 132, 255, 0.1);
+    }
+
+    /* Instagram button */
+    .instagram-ios-button {
+        background: var(--accent-1);
+        box-shadow: 0 2px 6px rgba(10, 132, 255, 0.3);
+    }
+
+    .instagram-ios-button:hover {
+        box-shadow: 0 4px 10px rgba(10, 132, 255, 0.4);
+        background: var(--nav-hover-bg);
     }
 }
