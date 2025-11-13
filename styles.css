@@ -231,9 +231,9 @@ nav a.active:hover {
 .screenshot-grid {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap:.5rem;
-    margin: 2rem 0;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 2rem -0.5rem;
 }
 
 /* Horizontal screenshot grid */
@@ -267,7 +267,9 @@ nav a.active:hover {
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    width: 180px;
+    flex: 1 1 auto;
+    max-width: 220px;
+    min-width: 160px;
     border-radius: 40px;
     padding: 8px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -488,14 +490,20 @@ ol li:before {
     display: block;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 500px) {
     .visible-tablet {
         display: block;
     }
 }
 
-@media (min-width: 950px) {
+@media (min-width: 750px) {
     .visible-desktop {
+        display: block;
+    }
+}
+
+@media (min-width: 1000px) {
+    .visible-wide {
         display: block;
     }
 }
@@ -515,11 +523,13 @@ ol li:before {
     }
 
     .app-screenshot {
-        width: 170px;
+        max-width: 200px;
+        min-width: 150px;
     }
-    
+
     .screenshot-grid {
         gap: 0.35rem;
+        margin: 2rem -0.35rem;
     }
 
     .secondary-button {
