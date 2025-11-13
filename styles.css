@@ -327,30 +327,44 @@ nav a.active:hover {
     border-radius: 50%;
 }
 
-/* Instagram button */
-.instagram-button {
+/* Instagram button - iOS style */
+.instagram-ios-button {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
-    font-size: 1em;
-    line-height: 1;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background-color: white;
-    border: 1px solid #e1e1e1;
-    color: #333;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    background: var(--accent-1);
     transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 122, 255, 0.3);
+    letter-spacing: 0.3px;
 }
 
-.instagram-button:hover {
-    background-color: #f8f8f8;
-    border-color: #d0d0d0;
+.instagram-ios-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 122, 255, 0.4);
+    background: var(--nav-hover-bg);
 }
 
-.instagram-button img {
-    width: 16px;
-    height: 16px;
-    margin-right: 4px;
+.instagram-ios-button svg {
+    flex-shrink: 0;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .instagram-ios-button {
+        background: var(--accent-1);
+        box-shadow: 0 2px 6px rgba(10, 132, 255, 0.3);
+    }
+
+    .instagram-ios-button:hover {
+        box-shadow: 0 4px 10px rgba(10, 132, 255, 0.4);
+        background: var(--nav-hover-bg);
+    }
 }
 
 /* Footer styling */
