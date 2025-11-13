@@ -173,7 +173,8 @@ nav a.active:hover {
 }
 
 .button-group {
-    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     margin: 1.5rem 0;
 }
@@ -183,11 +184,20 @@ nav a.active:hover {
     padding: 0.8rem 1.5rem 0.6rem 1.5rem;
 }
 
+.button-group .cta-button {
+    margin: 0;
+}
+
 /* Intro section layout */
 .intro-card {
     display: flex;
     flex-direction: column;
     position: relative;
+}
+
+.intro-columns {
+    display: flex;
+    flex-direction: column;
 }
 
 .intro-content {
@@ -458,20 +468,20 @@ ol li:before {
 
 /* Media queries for responsive design */
 @media (min-width: 600px) {
-    .intro-card {
+    .intro-columns {
         flex-direction: row;
         align-items: flex-start;
         gap: 2rem;
     }
-    
+
     .intro-content {
         flex: 3;
     }
-    
+
     .intro-screenshot-mobile {
         display: none;
     }
-    
+
     .intro-screenshot-desktop {
         display: flex;
         flex: 1;
@@ -479,7 +489,7 @@ ol li:before {
         align-items: flex-start;
         margin-top: 4rem;
     }
-    
+
     .intro-screenshot-desktop .app-screenshot {
         width: 220px;
     }
@@ -512,11 +522,11 @@ ol li:before {
     header h1 {
         font-size: 1.6rem;
     }
-    
+
     nav {
         flex-wrap: wrap;
     }
-    
+
     nav a {
         flex: 1 0 auto;
         text-align: center;
@@ -534,8 +544,17 @@ ol li:before {
 
     .secondary-button {
         margin: 0.5rem 0 1rem 0;
-        display: inline-block; 
-        width: auto; 
+        display: inline-block;
+        width: auto;
+    }
+
+    .cta-section {
+        text-align: center;
+    }
+
+    .button-group {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
