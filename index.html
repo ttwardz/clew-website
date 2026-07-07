@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
-    <meta property="og:site_name" content="Clew App"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <title>Clew - An App for Storing and Exploring Reading Highlights</title>
     <meta name="description" content="Clew is the ultimate app for storing and exploring your reading highlights, margin notes, and other insights from books, articles, and other media."/>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" href="/favicon.ico">
+
+    <!-- Me: theme-color tints the browser/Safari chrome to match my --bg in each mode. -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF6EF"/>
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181412"/>
+
+    <!-- Me: Open Graph = the link-preview card in iMessage/Slack/social. Keep title/desc/url per-page. -->
+    <meta property="og:site_name" content="Clew App"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Store and Explore Your Reading Highlights"/>
+    <meta property="og:description" content="A single place for all your reading highlights, notes, and favorite lines. Save 'em, tag 'em, search 'em, share 'em."/>
+    <meta property="og:url" content="https://getclew.com/"/>
+    <meta property="og:image" content="https://getclew.com/assets/clew-list-detail-book-song-gallery-light-framed.webp"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <link rel="stylesheet" type="text/css" href="/styles.css"/>
+    <link rel="icon" href="/favicon.ico"/>
 </head>
 
 <body>
@@ -32,9 +47,13 @@
                 <h1>Store and Explore Your Reading Highlights</h1>
             </div>
 
+            <!-- Me: <picture> downloads ONLY the light or dark shot (via the media query on <source>),
+                 never both. Same trick on every screenshot below. width/height set to stop layout shift. -->
             <a href="assets/clew-book-highlight-name-of-the-wind-light-framed.webp" target="_blank" class="intro-shot">
-                <img class="light-mode-image" src="assets/clew-book-highlight-name-of-the-wind-light-framed.webp" alt="A screenshot of the Clew app showing a saved highlight from The Name of the Wind."/>
-                <img class="dark-mode-image" src="assets/clew-book-highlight-name-of-the-wind-dark-framed.webp" alt="A screenshot of the Clew app showing a saved highlight from The Name of the Wind."/>
+                <picture>
+                    <source srcset="assets/clew-book-highlight-name-of-the-wind-dark-framed.webp" media="(prefers-color-scheme: dark)"/>
+                    <img src="assets/clew-book-highlight-name-of-the-wind-light-framed.webp" width="1350" height="2760" alt="A screenshot of the Clew app showing a saved highlight from The Name of the Wind."/>
+                </picture>
             </a>
 
             <div class="lede">
@@ -61,8 +80,10 @@
     <section class="gallery">
         <div class="container">
             <a href="assets/clew-list-detail-book-song-gallery-light-framed.webp" target="_blank" class="screenshot-grid-horizontal visible-desktop">
-                <img class="light-mode-image" src="assets/clew-list-detail-book-song-gallery-light-framed.webp" alt="A grid of 3 screenshots of the Clew app showing a list of saved highlights and the details of 2 specific highlights, including one from the book Vexations and one from the song Lover You Should've Come Over by Jeff Buckley."/>
-                <img class="dark-mode-image" src="assets/clew-list-detail-book-song-gallery-dark-framed.webp" alt="A grid of 3 screenshots of the Clew app showing a list of saved highlights and the details of 2 specific highlights, including one from the book Vexations and one from the song Lover You Should've Come Over by Jeff Buckley."/>
+                <picture>
+                    <source srcset="assets/clew-list-detail-book-song-gallery-dark-framed.webp" media="(prefers-color-scheme: dark)"/>
+                    <img src="assets/clew-list-detail-book-song-gallery-light-framed.webp" width="4050" height="2760" loading="lazy" alt="A grid of 3 screenshots of the Clew app showing a list of saved highlights and the details of 2 specific highlights, including one from the book Vexations and one from the song Lover You Should've Come Over by Jeff Buckley."/>
+                </picture>
             </a>
         </div>
     </section>
@@ -82,23 +103,31 @@
 
             <div class="screenshot-grid">
                 <a href="assets/clew-highlight-detail-brideshead-revisited-light-framed.webp" target="_blank" class="app-screenshot visible-mobile visible-tablet visible-desktop">
-                    <img class="light-mode-image" src="assets/clew-highlight-detail-brideshead-revisited-light-framed.webp" alt="A screenshot of the Clew app showing a saved highlight from Brideshead Revisited."/>
-                    <img class="dark-mode-image" src="assets/clew-highlight-detail-brideshead-revisited-dark-framed.webp" alt="A screenshot of the Clew app showing a saved highlight from Brideshead Revisited."/>
+                    <picture>
+                        <source srcset="assets/clew-highlight-detail-brideshead-revisited-dark-framed.webp" media="(prefers-color-scheme: dark)"/>
+                        <img src="assets/clew-highlight-detail-brideshead-revisited-light-framed.webp" width="1350" height="2760" loading="lazy" alt="A screenshot of the Clew app showing a saved highlight from Brideshead Revisited."/>
+                    </picture>
                 </a>
 
                 <a href="assets/clew-books-list-light-framed.webp" target="_blank" class="app-screenshot visible-tablet visible-desktop">
-                    <img class="light-mode-image" src="assets/clew-books-list-light-framed.webp" alt="A screenshot of the Clew app showing a list of books."/>
-                    <img class="dark-mode-image" src="assets/clew-books-list-dark-framed.webp" alt="A screenshot of the Clew app showing a list of books."/>
+                    <picture>
+                        <source srcset="assets/clew-books-list-dark-framed.webp" media="(prefers-color-scheme: dark)"/>
+                        <img src="assets/clew-books-list-light-framed.webp" width="1350" height="2760" loading="lazy" alt="A screenshot of the Clew app showing a list of books."/>
+                    </picture>
                 </a>
 
                 <a href="assets/clew-tags-list-light-framed.webp" target="_blank" class="app-screenshot visible-desktop">
-                    <img class="light-mode-image" src="assets/clew-tags-list-light-framed.webp" alt="A screenshot of the Clew app showing a list of tags."/>
-                    <img class="dark-mode-image" src="assets/clew-tags-list-dark-framed.webp" alt="A screenshot of the Clew app showing a list of tags."/>
+                    <picture>
+                        <source srcset="assets/clew-tags-list-dark-framed.webp" media="(prefers-color-scheme: dark)"/>
+                        <img src="assets/clew-tags-list-light-framed.webp" width="1350" height="2760" loading="lazy" alt="A screenshot of the Clew app showing a list of tags."/>
+                    </picture>
                 </a>
 
                 <a href="assets/clew-favorite-tag-light-framed.webp" target="_blank" class="app-screenshot visible-wide">
-                    <img class="light-mode-image" src="assets/clew-favorite-tag-light-framed.webp" alt="A screenshot of the Clew app showing highlights tagged as favorites."/>
-                    <img class="dark-mode-image" src="assets/clew-favorite-tag-dark-framed.webp" alt="A screenshot of the Clew app showing highlights tagged as favorites."/>
+                    <picture>
+                        <source srcset="assets/clew-favorite-tag-dark-framed.webp" media="(prefers-color-scheme: dark)"/>
+                        <img src="assets/clew-favorite-tag-light-framed.webp" width="1350" height="2760" loading="lazy" alt="A screenshot of the Clew app showing highlights tagged as favorites."/>
+                    </picture>
                 </a>
             </div>
         </div>
@@ -127,4 +156,5 @@
         </div>
     </footer>
 </body>
+
 </html>

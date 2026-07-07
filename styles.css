@@ -212,7 +212,7 @@ section + section { border-top: 1px solid var(--rule); }
 
 .secondary-button:hover { border-color: var(--accent); color: var(--accent); }
 
-.actions, .button-group {
+.actions {
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -220,8 +220,7 @@ section + section { border-top: 1px solid var(--rule); }
     margin-top: 2rem;
 }
 
-.actions .cta-button, .actions .secondary-button,
-.button-group .cta-button, .button-group .secondary-button { margin: 0; }
+.actions .cta-button, .actions .secondary-button { margin: 0; }
 
 /* ===== Hero / intro ===== */
 .intro-head h1 { font-size: 3.2rem; max-width: 16ch; }
@@ -252,6 +251,8 @@ section + section { border-top: 1px solid var(--rule); }
 }
 
 @media (min-width: 801px) {
+    /* Me: desktop hero is 2 columns — prose on the left, a 250px phone shot on the right.
+       The shot spans the head + body rows; actions run full width underneath both. */
     .intro {
         display: grid;
         grid-template-columns: 1fr 250px;
@@ -331,6 +332,8 @@ section + section { border-top: 1px solid var(--rule); }
 }
 
 /* ===== Screenshot grid (phones) ===== */
+/* Me: auto-fit packs as many 160px+ phone shots per row as fit, then wraps.
+   How many actually show at each width is controlled by the .visible-* classes below. */
 .screenshot-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -373,8 +376,6 @@ section + section { border-top: 1px solid var(--rule); }
 }
 
 /* ===== Blog / updates ===== */
-.blog-container { max-width: 820px; margin: 0 auto; }
-
 .post-date {
     color: var(--ink-soft);
     font-style: italic;
@@ -456,17 +457,6 @@ footer {
 .instagram-ios-button:hover { color: var(--accent); border-color: var(--accent); }
 .instagram-ios-button svg { flex-shrink: 0; }
 footer p { margin-top: 1.4rem; font-size: 0.92rem; }
-
-/* ===== Light / dark screenshot swapping =====
-   `img.` prefix matches the specificity of layout rules like
-   `.intro-shot img` / `.app-screenshot img` and wins by source order. */
-img.light-mode-image { display: block; }
-img.dark-mode-image { display: none; }
-
-@media (prefers-color-scheme: dark) {
-    img.light-mode-image { display: none; }
-    img.dark-mode-image { display: block; }
-}
 
 /* ===== Responsive ===== */
 @media (max-width: 800px) {
