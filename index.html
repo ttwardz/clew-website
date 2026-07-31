@@ -51,15 +51,15 @@
                 <h1>Store and Explore Your Reading Highlights</h1>
             </div>
 
-            <!-- Me: <picture> downloads ONLY the light or dark shot (via the media query on <source>),
+            <!-- The tag <picture> downloads ONLY the light or dark shot (via the media query on <source>),
                  never both. Same trick on every screenshot below. width/height set to stop layout shift. -->
-            <a href="assets/clew-book-highlight-name-of-the-wind-light-framed.webp" target="_blank" class="intro-shot">
-                <picture>
-                    <source srcset="assets/clew-book-highlight-name-of-the-wind-dark-framed.webp"
-                        media="(prefers-color-scheme: dark)" />
-                    <img src="assets/clew-book-highlight-name-of-the-wind-light-framed.webp" width="1350" height="2760"
-                        alt="A screenshot of the Clew app showing a saved highlight from The Name of the Wind." />
-                </picture>
+            <a href="assets/home/clew-highlight-detail-all-dies-april-book.webp" target="_blank" class="intro-shot">
+                <!-- <picture> -->
+                <!-- <source srcset="assets/home/clew-highlight-detail-all-dies-april-book.webp"
+                        media="(prefers-color-scheme: dark)" /> -->
+                <img src="assets/home/clew-highlight-detail-all-dies-april-book.webp" width="1350" height="2760"
+                    alt="A screenshot of the Clew app showing a saved highlight from The Name of the Wind." />
+                <!-- </picture> -->
             </a>
 
             <div class="lede">
@@ -144,21 +144,12 @@
             </ul>
 
             <div class="screenshot-grid">
-                <a href="assets/home/clew-tags-list-light.webp" target="_blank"
-                    class="app-screenshot visible-mobile visible-tablet visible-desktop">
-                    <picture>
-                        <source srcset="assets/home/clew-tags-list-dark.webp" media="(prefers-color-scheme: dark)" />
-                        <img src="assets/home/clew-tags-list-light.webp" width="1350" height="2760" loading="lazy"
-                            alt="A screenshot of the Clew app showing a list of tags, each with a color and a count of how many highlights use it." />
-                    </picture>
-                </a>
-
                 <!-- The three below are single-theme shots, so no <picture>/<source> pair needed. -->
-                <a href="assets/home/clew-book-detail-the-bell-jar-filtered-by-tag.webp" target="_blank"
-                    class="app-screenshot visible-tablet visible-desktop">
-                    <img src="assets/home/clew-book-detail-the-bell-jar-filtered-by-tag.webp" width="1350" height="2760"
-                        loading="lazy"
-                        alt="A screenshot of the Clew app showing The Bell Jar by Sylvia Plath, with its highlights filtered down to those tagged &quot;city&quot;." />
+                <a href="assets/home/clew-highlight-detail-small-things-like-these-note.webp" target="_blank"
+                    class="app-screenshot visible-wide">
+                    <img src="assets/home/clew-highlight-detail-small-things-like-these-note.webp" width="1350"
+                        height="2760" loading="lazy"
+                        alt="A screenshot of the Clew app showing a saved highlight from Small Things Like These by Claire Keegan, with a note being written below it." />
                 </a>
 
                 <a href="assets/home/clew-highlight-detail-web-article.webp" target="_blank"
@@ -168,11 +159,22 @@
                         alt="A screenshot of the Clew app showing a saved highlight from an article on Inc.com." />
                 </a>
 
-                <a href="assets/home/clew-highlight-detail-small-things-like-these-note.webp" target="_blank"
-                    class="app-screenshot visible-wide">
-                    <img src="assets/home/clew-highlight-detail-small-things-like-these-note.webp" width="1350"
-                        height="2760" loading="lazy"
-                        alt="A screenshot of the Clew app showing a saved highlight from Small Things Like These by Claire Keegan, with a note being written below it." />
+                <a href="assets/home/clew-book-detail-the-bell-jar-filtered-by-tag.webp" target="_blank"
+                    class="app-screenshot visible-tablet visible-desktop">
+                    <img src="assets/home/clew-book-detail-the-bell-jar-filtered-by-tag.webp" width="1350" height="2760"
+                        loading="lazy"
+                        alt="A screenshot of the Clew app showing The Bell Jar by Sylvia Plath, with its highlights filtered down to those tagged &quot;city&quot;." />
+                </a>
+
+
+                <!-- The one below has light and dark theme versions. -->
+                <a href="assets/home/clew-tags-list-light.webp" target="_blank"
+                    class="app-screenshot visible-mobile visible-tablet visible-desktop">
+                    <picture>
+                        <source srcset="assets/home/clew-tags-list-dark.webp" media="(prefers-color-scheme: dark)" />
+                        <img src="assets/home/clew-tags-list-light.webp" width="1350" height="2760" loading="lazy"
+                            alt="A screenshot of the Clew app showing a list of tags, each with a color and a count of how many highlights use it." />
+                    </picture>
                 </a>
             </div>
         </div>
