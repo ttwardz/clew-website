@@ -280,25 +280,11 @@ section + section { border-top: 1px solid var(--rule); }
     .intro-shot img { border-radius: 26px; }
 }
 
-/* ===== Wide gallery screenshot ===== */
+/* ===== Gallery screenshots ===== */
+/* Me: same .screenshot-grid / .app-screenshot machinery as the features section below,
+   but this section has no heading above it, so the grid's usual top margin isn't wanted. */
 .gallery { text-align: center; }
-
-.screenshot-grid-horizontal {
-    display: none;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-}
-
-.screenshot-grid-horizontal img {
-    width: 100%;
-    border-radius: 14px;
-    box-shadow: var(--shadow-shot);
-}
-
-@media (min-width: 750px) {
-    .screenshot-grid-horizontal.visible-desktop { display: block; }
-}
+.gallery .screenshot-grid { margin-top: 0; }
 
 /* ===== Features section: keep prose to a readable measure ===== */
 .features h2,
