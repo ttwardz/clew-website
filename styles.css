@@ -371,6 +371,10 @@ section + section { border-top: 1px solid var(--rule); }
 
 .blog-post h2 { margin-bottom: 0.4rem; }
 
+/* Me: a screenshot grid inside a post needs breathing room below it too, not just above —
+   the following h3's 1.8rem top margin alone reads as lopsided against the grid's 2.5rem. */
+.blog-post .screenshot-grid { margin-bottom: 2.5rem; }
+
 ul:not(.feature-list) { padding-left: 1.2rem; }
 ul:not(.feature-list) li { margin-bottom: 0.5rem; }
 li::marker { color: var(--accent); }

@@ -52,10 +52,45 @@
     <div class="container">
         <article class="ios-card blog-post">
             <h2>Clew 1.5</h2>
-            <div class="post-date">Coming soon...</div>
-            <!-- <div class="post-date">August 1, 2026</div> -->
+            <div class="post-date">July 31, 2026</div>
             <p>Clew 1.5 is the biggest update yet&mdash;a new iPad experience, a redesigned look for sources and
                 highlights, on-device Apple Intelligence, better bulk import options, and a whole lot more.</p>
+
+            <!-- Same expanding grid as the homepage: the .visible-* classes reveal more shots as the
+                 viewport widens, so a phone gets one and a wide desktop gets all four. -->
+            <div class="screenshot-grid">
+                <a href="/assets/updates/clew-book-detail-sylvia-plath-bell-jar.webp" target="_blank"
+                    class="app-screenshot visible-mobile visible-tablet visible-desktop">
+                    <img src="/assets/updates/clew-book-detail-sylvia-plath-bell-jar.webp" width="1350" height="2760"
+                        loading="lazy"
+                        alt="A screenshot of the redesigned book page in Clew, showing The Bell Jar by Sylvia Plath with a color wash drawn from its cover art." />
+                </a>
+
+                <a href="/assets/updates/clew-highlight-detail-song-mitski-working-knife.webp" target="_blank"
+                    class="app-screenshot visible-tablet visible-desktop">
+                    <img src="/assets/updates/clew-highlight-detail-song-mitski-working-knife.webp" width="1350"
+                        height="2760" loading="lazy"
+                        alt="A screenshot of the redesigned highlight page in Clew, showing saved lyrics from Working for the Knife by Mitski with a source-themed footer." />
+                </a>
+
+                <!-- The Stats shot is the one pair with light and dark versions. -->
+                <a href="/assets/updates/clew-stats-view-light.webp" target="_blank"
+                    class="app-screenshot visible-desktop">
+                    <picture>
+                        <source srcset="/assets/updates/clew-stats-view-dark.webp"
+                            media="(prefers-color-scheme: dark)" />
+                        <img src="/assets/updates/clew-stats-view-light.webp" width="1350" height="2760" loading="lazy"
+                            alt="A screenshot of the Stats view in Clew, showing counts of highlights, sources, books, web sources, songs, and tags." />
+                    </picture>
+                </a>
+
+                <a href="/assets/updates/clew-home-screen-widgets.webp" target="_blank"
+                    class="app-screenshot visible-wide">
+                    <img src="/assets/updates/clew-home-screen-widgets.webp" width="1350" height="2760" loading="lazy"
+                        alt="A screenshot of an iPhone Home Screen with Clew widgets showing recent highlights and album artwork." />
+                </a>
+            </div>
+
             <h3>New features:</h3>
             <h4>A New Way to Navigate on iPad 🖥️</h4>
             <p>Clew now uses a three-column layout on iPad&mdash;collections, your list, and the detail view side by
