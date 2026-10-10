@@ -86,26 +86,6 @@ p { margin: 0 0 1.15rem; }
 strong { font-weight: 600; }
 em { font-style: italic; }
 
-.eyebrow {
-    font-family: "Georgia", serif;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 0 0 1.1rem;
-}
-
-.eyebrow::after {
-    content: "";
-    display: block;
-    width: 2.5rem;
-    height: 2px;
-    background: var(--accent);
-    margin-top: 0.7rem;
-    opacity: 0.85;
-}
-
 /* ===== Masthead ===== */
 header {
     border-bottom: 1px solid var(--rule);
@@ -183,6 +163,7 @@ section + section { border-top: 1px solid var(--rule); }
 
 .page-header { padding: 4rem 0 0; }
 .page-header h1 { max-width: var(--reading); margin: 0 auto; }
+.hero-section { padding-top: 4rem; }
 
 /* ===== Buttons ===== */
 .cta-button {
@@ -350,7 +331,6 @@ section + section { border-top: 1px solid var(--rule); }
 
 /* ===== Call-to-action section ===== */
 .cta { text-align: center; }
-.cta .eyebrow { display: inline-block; }
 .cta p { color: var(--ink-soft); }
 .cta .actions { justify-content: center; }
 
@@ -473,6 +453,7 @@ footer p { margin-top: 1.4rem; font-size: 0.92rem; }
     h2 { font-size: 1.8rem; }
     section { padding: 3rem 0; }
     .page-header { padding: 2.5rem 0 0; }
+    .hero-section { padding-top: 2.5rem; }
     .ios-card { padding: 1.5rem 1.4rem; }
     nav { gap: 1rem; row-gap: 0.6rem; }
     .masthead { gap: 0.75rem; padding-top: 2.25rem; padding-bottom: 1.6rem; }
