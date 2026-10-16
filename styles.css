@@ -391,39 +391,6 @@ blockquote {
     font-size: 1.25rem;
 }
 
-/* ===== Code ===== */
-code {
-    background: var(--rule);
-    border-radius: 4px;
-    padding: 0.15rem 0.4rem;
-    font-family: var(--font-mono);
-    font-size: 0.88em;
-}
-
-/* ===== Ordered lists (beta instructions) ===== */
-ol {
-    counter-reset: item;
-    padding-left: 0;
-    list-style: none;
-}
-
-ol li {
-    position: relative;
-    padding-left: 2.6rem;
-    margin-bottom: 1rem;
-}
-
-ol li::before {
-    content: counter(item) ".";
-    counter-increment: item;
-    position: absolute;
-    left: 0;
-    top: 0.05rem;
-    color: var(--accent);
-    font-family: var(--font-display);
-    font-weight: 600;
-}
-
 /* ===== Footer ===== */
 footer {
     border-top: 1px solid var(--rule);

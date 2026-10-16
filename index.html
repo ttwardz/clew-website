@@ -20,7 +20,7 @@
     <meta property="og:description"
         content="A single place for all your reading highlights, notes, and favorite lines. Save 'em, tag 'em, search 'em, share 'em." />
     <meta property="og:url" content="https://getclew.com/" />
-    <meta property="og:image" content="https://getclew.com/assets/home/clew-og-gallery-light.webp" />
+    <meta property="og:image" content="https://getclew.com/assets/home/clew-og-gallery-light.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" type="text/css" href="/styles.css" />
@@ -50,15 +50,10 @@
                 <h1>Store and Explore All Your Highlights</h1>
             </div>
 
-            <!-- The tag <picture> downloads ONLY the light or dark shot (via the media query on <source>),
-                 never both. Same trick on every screenshot below. width/height set to stop layout shift. -->
+            <!-- Single-theme shot, so no <picture>/<source> pair. width/height set to stop layout shift. -->
             <a href="assets/home/clew-highlight-detail-all-dies-april-book.webp" target="_blank" class="intro-shot">
-                <!-- <picture> -->
-                <!-- <source srcset="assets/home/clew-highlight-detail-all-dies-april-book.webp"
-                        media="(prefers-color-scheme: dark)" /> -->
                 <img src="assets/home/clew-highlight-detail-all-dies-april-book.webp" width="1350" height="2760"
-                    alt="A screenshot of the Clew app showing a saved highlight from The Name of the Wind." />
-                <!-- </picture> -->
+                    alt="A screenshot of the Clew app showing a saved highlight from All That Dies in April by Mariana Travacio." />
             </a>
 
             <div class="lede">
@@ -92,6 +87,7 @@
     <!-- Horizontal screenshot grid -->
     <section class="gallery">
         <div class="container">
+            <!-- <picture> downloads ONLY the light or dark shot (via the media query on <source>), never both. -->
             <div class="screenshot-grid">
                 <a href="assets/home/clew-highlights-list-light.webp" target="_blank"
                     class="app-screenshot visible-mobile visible-tablet visible-desktop">
