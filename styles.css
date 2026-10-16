@@ -210,18 +210,16 @@ section + section { border-top: 1px solid var(--rule); }
 /* ===== Hero / intro ===== */
 .intro-head h1 { font-size: 3.2rem; max-width: 16ch; }
 
+/* Me: the tilted, floated shot (≤800px) grows with the viewport — 96px on phones (≤480px wide),
+   scaling up to 160px just before the desktop two-column layout takes over at 801px. */
 .intro-shot {
     float: right;
-    width: 96px;
+    width: clamp(96px, 20vw, 160px);
     margin: 0.2rem 0 0.8rem 1.4rem;
-    padding: 5px;
-    background: var(--card);
-    border-radius: 18px;
-    box-shadow: var(--shadow-shot);
     transform: rotate(4deg);
 }
 
-.intro-shot img { display: block; width: 100%; border-radius: 13px; }
+.intro-shot img { display: block; width: 100%; filter: drop-shadow(var(--shadow-shot)); }
 
 .lede { font-size: 1.12rem; max-width: var(--measure); }
 
@@ -256,13 +254,9 @@ section + section { border-top: 1px solid var(--rule); }
         float: none;
         width: 250px;
         margin: 0.4rem 0 0;
-        padding: 0;
-        background: none;
         transform: none;
-        border-radius: 30px;
         justify-self: center;
     }
-    .intro-shot img { border-radius: 26px; }
 }
 
 /* ===== Gallery screenshots ===== */
@@ -313,16 +307,15 @@ section + section { border-top: 1px solid var(--rule); }
     margin: 2.5rem auto 0;
 }
 
+/* Me: every screenshot is a PNG/WebP with the iPhone bezel baked in and transparent corners, so
+   nothing is rounded or clipped here; drop-shadow follows the bezel's outline. */
 .app-screenshot {
     display: none;
     text-decoration: none;
     width: 100%;
-    border-radius: 30px;
-    box-shadow: var(--shadow-shot);
-    overflow: hidden;
 }
 
-.app-screenshot img { display: block; width: 100%; border-radius: 30px; }
+.app-screenshot img { display: block; width: 100%; filter: drop-shadow(var(--shadow-shot)); }
 
 .app-screenshot.visible-mobile { display: block; }
 @media (min-width: 500px) { .app-screenshot.visible-tablet { display: block; } }
@@ -358,6 +351,31 @@ section + section { border-top: 1px solid var(--rule); }
 /* Me: a screenshot grid inside a post needs breathing room below it too, not just above —
    the following h3's 1.8rem top margin alone reads as lopsided against the grid's 2.5rem. */
 .blog-post .screenshot-grid { margin-bottom: 2.5rem; }
+
+/* Me: a one-row gallery for posts. grid-auto-flow: column gives each shot its own column, so it
+   works for any count (3 in 1.7, 4 in 1.5) and every shot always shows. */
+.screenshot-grid.strip { grid-auto-flow: column; grid-auto-columns: 1fr; grid-template-columns: none; }
+.screenshot-grid.strip .app-screenshot { display: block; }
+
+/* On phones the row becomes a sideways scroller: shots stay a readable size (~40% of the screen,
+   so the next one peeks in as a scroll hint) and snap into place. It bleeds to the card's edges
+   via negative margins matched to .ios-card's phone padding, and pads top/bottom so the overflow
+   clip doesn't cut off the drop shadows. */
+@media (max-width: 499px) {
+    .blog-post .screenshot-grid.strip {
+        grid-auto-columns: 40%;
+        gap: 0.9rem;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 1.4rem;
+        margin: 1.25rem -1.4rem 0.5rem;
+        padding: 1.25rem 1.4rem 2.5rem;
+        scrollbar-width: none;
+    }
+    .blog-post .screenshot-grid.strip::-webkit-scrollbar { display: none; }
+    .screenshot-grid.strip .app-screenshot { scroll-snap-align: start; }
+}
 
 ul:not(.feature-list) { padding-left: 1.2rem; }
 ul:not(.feature-list) li { margin-bottom: 0.5rem; }
