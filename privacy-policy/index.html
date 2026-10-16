@@ -48,7 +48,7 @@
 
     <div class="container">
         <div class="ios-card">
-            <p>Last updated on March 17, 2025</p>
+            <p>Last updated on October 16, 2026</p>
 
             <h2>tl;dr</h2>
             <p>Neither the developers ("We") of Clew nor the app or its website collects, stores, or shares any of your personal information.</p>
@@ -64,7 +64,7 @@
 
             <p>Your Clew data is stored in your personal iCloud Drive database, which means it exists within your Apple account, on your device(s), and nowhere else.</p>
 
-            <p>Any machine learning (ML)&ndash;powered capabilities, such as intelligent tag suggestion, uses on-device frameworks. No information leaves your device, and no data is sent to or received from the internet.</p>
+            <p>Any machine learning (ML)&ndash;powered capabilities, such as intelligent tag suggestions, use on-device frameworks. No information leaves your device, and no data is sent to or received from the internet.</p>
 
             <p>For information about the data sources Clew uses, see the "External Data Sources" section of this Privacy Policy.</p>
         </div>
@@ -80,7 +80,35 @@
 
         <div class="ios-card">
             <h2>External Data Sources</h2>
-            <p>Book information: We use the Google Books API to autofill book information, including cover images, from the internet when you choose to do so in the Clew app. This is a get-only request. None of your information is shared.</p>
+            <p>When you search for a book, song, movie, TV show, or podcast, or save a link, Clew looks it up with one of the services below. Those requests carry only what's needed for the lookup, like the title you searched for or a website's address. None of your highlights, notes, or other personal information is sent.</p>
+
+            <h3>Apple Music</h3>
+            <p>Songs: song and album titles, artists, release dates, and artwork. Clew asks for Apple Music access only to search its catalog. None of your personal data is read, sent, or stored, and you don't need an Apple Music subscription.</p>
+            <p>Without access, song search still works through the iTunes Search API, but explicit tracks won't appear in the results.</p>
+
+            <h3>Apple (iTunes Search API)</h3>
+            <p>Books and podcasts. <a href="https://performance-partners.apple.com/search-api">Apple's iTunes Search API</a> supplies:</p>
+            <ul>
+                <li>A podcast's artwork and the address of its feed</li>
+                <li>Apple Books results, which is where Clew looks for a book unless you pick a different service in Settings</li>
+                <li>Song results, when Apple Music access isn't allowed</li>
+            </ul>
+
+            <h3>Google Books</h3>
+            <p>Books: titles, authors, publication years, page counts, descriptions, and cover art, from <a href="https://books.google.com">Google Books</a>.</p>
+
+            <h3>Open Library</h3>
+            <p>Books and cover art: book cover art (when Clew has an ISBN) and book details. <a href="https://openlibrary.org">Open Library</a> is run by the Internet Archive, and its catalog is contributed by the public.</p>
+
+            <h3>Podcast RSS feeds</h3>
+            <p>Podcast episodes: a show's episode list comes from the show's own RSS feed, published by whoever makes it&mdash;not from Clew or from Apple.</p>
+
+            <h3>TMDB</h3>
+            <p>Movies and TV shows: titles, release years, posters, and the people who wrote and directed them. <a href="https://www.themoviedb.org">TMDB</a> is also what the episode picker browses: the season list for a show, and the episodes inside a season.</p>
+            <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+
+            <h3>Websites</h3>
+            <p>Favicon images: when you save a link from a site that doesn't publish an icon of its own, Clew gets one from Google's favicon service, which is sent the site's address and nothing else.</p>
         </div>
     </div>
 
