@@ -8,11 +8,11 @@
     <title>Clew - Privacy Policy</title>
     <meta name="description" content="Privacy policy for Clew, the app for storing and exploring your reading highlights, margin notes, and other insights."/>
 
-    <!-- Me: theme-color tints the browser/Safari chrome to match my --bg in each mode. -->
+    <!-- Theme-color tints the browser/Safari chrome to match my --bg in each mode. -->
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF6EF"/>
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181412"/>
 
-    <!-- Me: Open Graph = the link-preview card in iMessage/Slack/social. Keep title/desc/url per-page. -->
+    <!-- Open Graph = the link-preview card in iMessage/Slack/social. Keep title/desc/url per-page. -->
     <meta property="og:site_name" content="Clew App"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Clew Privacy Policy"/>
@@ -48,10 +48,10 @@
 
     <div class="container">
         <div class="ios-card">
-            <p>Last updated on October 16, 2026</p>
+            <p>Last updated on October 27, 2026</p>
 
             <h2>tl;dr</h2>
-            <p>Neither the developers ("We") of Clew nor the app or its website collects, stores, or shares any of your personal information.</p>
+            <p>Neither the developers ("We") of Clew nor the app collects or stores any of your personal information, and your highlights and notes are private to your devices.</p>
         </div>
 
         <div class="ios-card">
@@ -62,11 +62,16 @@
 
             <p>There is no tracking technology in Clew.</p>
 
-            <p>Your Clew data is stored in your personal iCloud Drive database, which means it exists within your Apple account, on your device(s), and nowhere else.</p>
+            <p>Your Clew data is stored in your private iCloud database, which means it exists within your Apple account, on your device(s), and nowhere else.</p>
 
-            <p>Any machine learning (ML)&ndash;powered capabilities, such as intelligent tag suggestions, use on-device frameworks. No information leaves your device, and no data is sent to or received from the internet.</p>
+            <p>Any machine learning (ML)&ndash;powered capabilities, such as intelligent tag suggestions, use on-device frameworks.</p>
 
-            <p>For information about the data sources Clew uses, see the "External Data Sources" section of this Privacy Policy.</p>
+            <p>If you choose to connect your Readwise account to Clew, Clew sends your Readwise access token to Readwise to import highlights. Clew doesn't upload any data.</p>
+
+            <p>When you search for sources, import items, save from web links, or fill in missing artwork, Clew looks up details such as titles, authors, and ISBNs using the external data sources described below.
+                Clew doesn't send any of your highlights, notes, tags, or personal information.</p>
+
+            <p>For more information about external data sources, see the "External Data Sources" section of this Privacy Policy.</p>
         </div>
 
         <div class="ios-card">
@@ -80,7 +85,6 @@
 
         <div class="ios-card">
             <h2>External Data Sources</h2>
-            <p>When you search for a book, song, movie, TV show, or podcast, or save a link, Clew looks it up with one of the services below. Those requests carry only what's needed for the lookup, like the title you searched for or a website's address. None of your highlights, notes, or other personal information is sent.</p>
 
             <h3>Apple Music</h3>
             <p>Songs: song and album titles, artists, release dates, and artwork. Clew asks for Apple Music access only to search its catalog. None of your personal data is read, sent, or stored, and you don't need an Apple Music subscription.</p>
@@ -108,7 +112,11 @@
             <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
 
             <h3>Websites</h3>
-            <p>Favicon images: when you save a link from a site that doesn't publish an icon of its own, Clew gets one from Google's favicon service, which is sent the site's address and nothing else.</p>
+            <p>Clew contacts a website directly only to get the title and icon of a link you've saved: when you save it, or later if
+                that link's icon is missing (for example, after an import or restore). Like any web request, the site can see your
+                IP address. Clew sends no other information about you or your collection.</p>
+            <p>When a site doesn't publish an icon, Clew tries to get one from Google's favicon service, which is sent only the
+                site's address.</p>
         </div>
     </div>
 
