@@ -37,7 +37,6 @@
 
 /* ===== Base ===== */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -347,6 +346,21 @@ section + section { border-top: 1px solid var(--rule); }
 }
 
 .blog-post h2 { margin-bottom: 0.4rem; }
+
+/* Clears the sticky header when jumping to a release from the TOC */
+.blog-post { scroll-margin-top: 6rem; }
+
+/* Release TOC: patch releases in soft ink, feature releases bold in the accent */
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.2rem;
+}
+.toc a { color: var(--ink-soft); text-decoration: none; border-color: currentColor; }
+.toc a:has(strong) { color: var(--accent); }
 
 /* Me: a screenshot grid inside a post needs breathing room below it too, not just above —
    the following h3's 1.8rem top margin alone reads as lopsided against the grid's 2.5rem. */
